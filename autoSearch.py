@@ -51,5 +51,5 @@ driver.close()
 
 
 
-
+# dsenv\scripts\activate
 # py autoSearch.py
