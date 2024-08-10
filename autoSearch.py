@@ -1,11 +1,10 @@
 from selenium.webdriver.common.by import By
 import time
 from selenium import webdriver
-from pynput.keyboard import Key, Controller
 from selenium.webdriver import Keys
 
 
-words = input('Enter Words sp sep  ').split(',')
+words = input('Enter Words (Comma Seperated)  ').split(',')
 swords = []
 
 for i in words:
@@ -20,12 +19,11 @@ options.binary_location = 'C:/Program Files (x86)/Microsoft/Edge/Application/mse
 driver = webdriver.Edge(options=options)
 driver.get('https://www.bing.com/')
 driver.implicitly_wait(30)
-keyboard = Controller()
 time.sleep(2)
 inputBox = driver.find_element(by=By.XPATH, value='//*[@id="sb_form_q"]')
 inputBox.send_keys('Countries in the world')
 time.sleep(2)
-keyboard.press(Key.enter)
+inputBox.send_keys(Keys.ENTER)
 time.sleep(2)
 
 
